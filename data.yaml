@@ -1,0 +1,14 @@
+import yaml
+
+def create_yolo_data_yaml(train_images, val_images, test_images, classes):
+    data = {
+        'train': train_images,
+        'val': val_images,
+        'test': test_images,
+        'nc': len(classes),
+        'names': classes
+    }
+    with open('data.yaml', 'w') as file:
+        yaml.dump(data, file)
+
+create_yolo_data_yaml(train_dir, val_dir, test_dir, ['class1', 'class2'])  # Replace with actual class names
